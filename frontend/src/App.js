@@ -16,7 +16,7 @@ function App() {
   const handleInquirySubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/inquiry', {
+      await axios.post(' https://chhotan-ram-api1.onrender.com/api/inquiry', {
         name, phone, packageType, hasMaterial: materialOption === 'withMaterial'
       });
       alert('आपकी डिटेल्स सबमिट हो गई हैं! हम जल्द संपर्क करेंगे।');
@@ -28,7 +28,7 @@ function App() {
   const handleAdminLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/admin/login', { email });
+      const res = await axios.post(' https://chhotan-ram-api1.onrender.com/api/admin/login', { email });
       if (res.data.success) setAdminData(res.data);
     } catch (err) {
       alert('सिर्फ एडमिन ईमेल अलाउड है!');
